@@ -4,6 +4,7 @@ import { Mail, User, Briefcase, BookOpen, Award, Github, Linkedin, ExternalLink,
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -149,6 +150,16 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
             <div className="animate-fade-in">
+              <div className="mb-8">
+                <Avatar className="w-40 h-40 mx-auto mb-6 border-4 border-white shadow-xl">
+                  <AvatarImage 
+                    src="/lovable-uploads/d4909c64-431e-4fc7-b920-9bc1ff0a1d38.png" 
+                    alt="Lenka Karthikeya"
+                    className="object-cover"
+                  />
+                  <AvatarFallback className="text-2xl font-bold">LK</AvatarFallback>
+                </Avatar>
+              </div>
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
                 Lenka Karthikeya
               </h1>
@@ -218,24 +229,36 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Quick Facts</h3>
-              <div className="space-y-4">
-                <div className="flex justify-between">
-                  <span className="text-gray-600">CGPA</span>
-                  <span className="font-semibold text-gray-900">8.30 / 10</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Intermediate</span>
-                  <span className="font-semibold text-gray-900">81.4%</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Current Focus</span>
-                  <span className="font-semibold text-gray-900">Web Security Research</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Learning</span>
-                  <span className="font-semibold text-gray-900">.NET Framework</span>
+            <div className="flex justify-center">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-indigo-600 rounded-3xl transform rotate-6"></div>
+                <div className="relative bg-white p-8 rounded-3xl shadow-xl">
+                  <Avatar className="w-64 h-64 mx-auto mb-6">
+                    <AvatarImage 
+                      src="/lovable-uploads/d4909c64-431e-4fc7-b920-9bc1ff0a1d38.png" 
+                      alt="Lenka Karthikeya"
+                      className="object-cover"
+                    />
+                    <AvatarFallback className="text-4xl font-bold">LK</AvatarFallback>
+                  </Avatar>
+                  <div className="space-y-4">
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">CGPA</span>
+                      <span className="font-semibold text-gray-900">8.30 / 10</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Intermediate</span>
+                      <span className="font-semibold text-gray-900">81.4%</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Current Focus</span>
+                      <span className="font-semibold text-gray-900">Web Security Research</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Learning</span>
+                      <span className="font-semibold text-gray-900">.NET Framework</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
