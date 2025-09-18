@@ -6,6 +6,7 @@ interface NavigationProps {
 }
 
 const Navigation = ({ scrollToSection }: NavigationProps) => {
+  console.log('Navigation component rendering...');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [

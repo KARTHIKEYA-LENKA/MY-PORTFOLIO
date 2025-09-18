@@ -9,6 +9,7 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 
 const Index = () => {
+  console.log('Index component rendering...');
 
   const skills = {
     Programming: ['Java (Core)', 'Data Structures & Algorithms', 'C', 'MySQL'],
