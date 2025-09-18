@@ -30,13 +30,13 @@ const Hero = ({ scrollToSection }: HeroProps) => {
         <div className={`transition-all duration-1000 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
           {/* Profile Image */}
           <div className="mb-8 animate-scale-in" style={{ animationDelay: '0.2s' }}>
-            <Avatar className="w-48 h-48 mx-auto mb-6 border-4 border-white/20 shadow-glow backdrop-blur-sm">
+            <Avatar className="w-48 h-48 mx-auto mb-6 border-4 border-white/30 shadow-elegant ring-4 ring-white/20 backdrop-blur-sm bg-white/10">
               <AvatarImage 
                 src="/lovable-uploads/d4909c64-431e-4fc7-b920-9bc1ff0a1d38.png" 
                 alt="Lenka Karthikeya"
                 className="object-cover"
               />
-              <AvatarFallback className="text-3xl font-bold bg-white/10 text-white">LK</AvatarFallback>
+              <AvatarFallback className="text-3xl font-bold bg-white/20 text-white border border-white/30">LK</AvatarFallback>
             </Avatar>
           </div>
 
@@ -58,7 +58,7 @@ const Hero = ({ scrollToSection }: HeroProps) => {
             <Button 
               onClick={() => scrollToSection('contact')} 
               size="lg"
-              className="bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-glow"
+              className="bg-gradient-primary text-white border-0 backdrop-blur-sm px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-glow hover:bg-gradient-to-r hover:from-primary hover:to-accent"
             >
               <Mail className="mr-3 h-5 w-5" />
               Get In Touch
@@ -67,18 +67,18 @@ const Hero = ({ scrollToSection }: HeroProps) => {
               variant="outline" 
               size="lg"
               onClick={() => scrollToSection('projects')}
-              className="border-white/40 text-white hover:bg-white/10 backdrop-blur-sm px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105"
+              className="border-white/40 text-white bg-white/5 hover:bg-white/20 hover:text-white backdrop-blur-sm px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 group"
             >
-              <Briefcase className="mr-3 h-5 w-5" />
-              View Projects
+              <Briefcase className="mr-3 h-5 w-5 group-hover:animate-bounce" />
+              <span className="group-hover:animate-fade-in">View Projects</span>
             </Button>
             <Button 
               variant="outline" 
               size="lg"
-              className="border-white/40 text-white hover:bg-white/10 backdrop-blur-sm px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105"
+              className="border-white/40 text-white bg-white/5 hover:bg-white/20 hover:text-white backdrop-blur-sm px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 group"
             >
-              <Download className="mr-3 h-5 w-5" />
-              Download Resume
+              <Download className="mr-3 h-5 w-5 group-hover:animate-bounce" />
+              <span className="group-hover:animate-fade-in">Download Resume</span>
             </Button>
           </div>
         </div>
