@@ -81,12 +81,30 @@ const Index = () => {
   ];
 
   const certifications = [
-    'ServiceNow Certified System Administrator (CSA) - Completed',
-    'ServiceNow Certified Application Developer (CAD) - Completed',
-    'Salesforce Internship Completion (Trailhead)',
-    'Java Programming (NPTEL)',
-    'MySQL Database Certification (HackerRank)',
-    'IT Essentials (Cisco)'
+    {
+      name: 'ServiceNow Certified System Administrator (CSA) - Completed',
+      link: 'https://drive.google.com/file/d/1DoeRq0OtDEuV4anSPU1Ivp6t-LgQILg-/view?usp=drive_link'
+    },
+    {
+      name: 'ServiceNow Certified Application Developer (CAD) - Completed',
+      link: 'https://drive.google.com/file/d/1shYcaQKvIw3-BRaMcEIpD-e77UKiCLrB/view?usp=drive_link'
+    },
+    {
+      name: 'Salesforce Internship Completion (Trailhead)',
+      link: 'https://skillwallet.smartinternz.com/internships/salesforce_certificates/bddcda5d65fcfdec9de3838794a77265'
+    },
+    {
+      name: 'Java Programming (NPTEL)',
+      link: 'https://drive.google.com/file/d/1_xfikASfgs1h0ld52bgq44c-bx2bYWs6/view?usp=drive_link'
+    },
+    {
+      name: 'MySQL Database Certification (HackerRank)',
+      link: 'https://www.hackerrank.com/certificates/42d49d592607'
+    },
+    {
+      name: 'IT Essentials (Cisco)',
+      link: 'https://www.credly.com/badges/4706138d-9253-403e-a1d6-cd9eb9027117/linked_in_profile'
+    }
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -101,7 +119,12 @@ const Index = () => {
       <About />
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+      <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-muted/20 via-background to-muted/30 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 left-10 w-40 h-40 bg-primary/30 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-20 right-20 w-60 h-60 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        </div>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Professional Experience</h2>
@@ -185,7 +208,13 @@ const Index = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+      <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background via-muted/20 to-background relative overflow-hidden">
+        {/* Background Geometric Shapes */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-primary/40 rounded-lg rotate-45 animate-float"></div>
+          <div className="absolute bottom-32 right-32 w-24 h-24 bg-accent/30 rounded-full animate-float" style={{ animationDelay: '1.5s' }}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-radial from-primary/5 to-transparent rounded-full"></div>
+        </div>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Technical Expertise</h2>
@@ -222,10 +251,20 @@ const Index = () => {
             <h3 className="text-3xl font-bold text-foreground mb-12 text-center">Certifications & Achievements</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {certifications.map((cert, index) => (
-                <div key={index} className="flex items-center space-x-4 bg-card p-6 rounded-xl shadow-card border border-border/50 hover:shadow-elegant transition-all duration-300 group animate-slide-in-right" style={{ animationDelay: `${index * 0.1}s` }}>
+                <a 
+                  key={index} 
+                  href={cert.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-4 bg-card p-6 rounded-xl shadow-card border border-border/50 hover:shadow-elegant hover:border-primary/30 transition-all duration-300 group animate-slide-in-right cursor-pointer hover:-translate-y-1" 
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
                   <Award className="h-8 w-8 text-primary flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
-                  <p className="text-foreground/80 font-medium">{cert}</p>
-                </div>
+                  <p className="text-foreground/80 font-medium group-hover:text-primary transition-colors duration-300">{cert.name}</p>
+                  <svg className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors duration-300 ml-auto opacity-0 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
               ))}
             </div>
           </div>
@@ -233,7 +272,11 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-card">
+      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-card relative overflow-hidden">
+        {/* Background Animation */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/10 via-transparent to-accent/10 animate-gradient-shift bg-[length:400%_400%]"></div>
+        </div>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Let's Connect</h2>

@@ -17,7 +17,19 @@ const Hero = ({ scrollToSection }: HeroProps) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-hero bg-[length:400%_400%] animate-gradient-shift"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-accent/15 to-secondary/20 bg-[length:400%_400%] animate-gradient-shift"></div>
+      
+      {/* Mesh Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <defs>
+            <pattern id="mesh" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M 20,0 L 0,20 M 0,0 L 20,20" stroke="currentColor" strokeWidth="0.5" fill="none"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#mesh)" className="text-white/20"/>
+        </svg>
+      </div>
       
       {/* Geometric Patterns */}
       <div className="absolute inset-0 opacity-20">
@@ -30,13 +42,13 @@ const Hero = ({ scrollToSection }: HeroProps) => {
         <div className={`transition-all duration-1000 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
           {/* Profile Image */}
           <div className="mb-8 animate-scale-in" style={{ animationDelay: '0.2s' }}>
-            <Avatar className="w-48 h-48 mx-auto mb-6 border-4 border-white/30 shadow-elegant ring-4 ring-white/20 backdrop-blur-sm bg-white/10">
+            <Avatar className="w-48 h-48 mx-auto mb-6 border-4 border-primary/40 shadow-elegant ring-4 ring-primary/30 backdrop-blur-sm bg-gradient-to-br from-primary/20 to-accent/20">
               <AvatarImage 
                 src="/lovable-uploads/d4909c64-431e-4fc7-b920-9bc1ff0a1d38.png" 
                 alt="Lenka Karthikeya"
                 className="object-cover"
               />
-              <AvatarFallback className="text-3xl font-bold bg-white/20 text-white border border-white/30">LK</AvatarFallback>
+              <AvatarFallback className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent border border-primary/30">LK</AvatarFallback>
             </Avatar>
           </div>
 
@@ -75,6 +87,14 @@ const Hero = ({ scrollToSection }: HeroProps) => {
             <Button 
               variant="outline" 
               size="lg"
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/resume.pdf';
+                link.download = 'Lenka_Karthikeya_Resume.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
               className="border-white/40 text-white bg-white/5 hover:bg-white/20 hover:text-white backdrop-blur-sm px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 group"
             >
               <Download className="mr-3 h-5 w-5 group-hover:animate-bounce" />
