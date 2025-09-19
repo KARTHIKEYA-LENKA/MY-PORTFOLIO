@@ -16,10 +16,10 @@ const Hero = ({ scrollToSection }: HeroProps) => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background - Professional Black Theme */}
-      <div className="absolute inset-0 hero-bg-black animate-gradient-shift"></div>
-      {/* Background Image Overlay */}
-      <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center opacity-25"></div>
+      {/* Professional Black Animated Background */}
+      <div className="absolute inset-0 hero-bg-professional animate-gradient-shift"></div>
+      {/* Professional Background Image */}
+      <div className="absolute inset-0 bg-[url('/images/professional-hero-bg.jpg')] bg-cover bg-center opacity-30"></div>
       
       {/* Geometric Accents */}
       <div className="absolute inset-0 opacity-20">
@@ -32,13 +32,13 @@ const Hero = ({ scrollToSection }: HeroProps) => {
         <div className={`transition-all duration-1000 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
           {/* Profile Image */}
           <div className="mb-8 animate-scale-in" style={{ animationDelay: '0.2s' }}>
-            <Avatar className="w-48 h-48 mx-auto mb-6 border-4 border-primary/40 shadow-elegant ring-4 ring-primary/30 backdrop-blur-sm bg-gradient-to-br from-primary/20 to-accent/20">
+            <Avatar className="w-48 h-48 mx-auto mb-6 border-4 border-white/30 shadow-2xl ring-4 ring-white/20 backdrop-blur-sm bg-gradient-to-br from-white/10 to-primary/20">
               <AvatarImage 
                 src="/lovable-uploads/d4909c64-431e-4fc7-b920-9bc1ff0a1d38.png" 
                 alt="Lenka Karthikeya"
-                className="object-cover"
+                className="object-cover brightness-110 contrast-110"
               />
-              <AvatarFallback className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent border border-primary/30">LK</AvatarFallback>
+              <AvatarFallback className="text-3xl font-bold text-white border border-white/30">LK</AvatarFallback>
             </Avatar>
           </div>
 
@@ -66,29 +66,22 @@ const Hero = ({ scrollToSection }: HeroProps) => {
               Get In Touch
             </Button>
             <Button 
-              variant="outline" 
               size="lg"
               onClick={() => scrollToSection('projects')}
-              className="border-white/40 text-white bg-white/5 hover:bg-white/20 hover:text-white backdrop-blur-sm px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 group"
+              className="bg-gradient-primary text-white border-0 backdrop-blur-sm px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-glow hover:bg-gradient-to-r hover:from-primary hover:to-accent"
             >
-              <Briefcase className="mr-3 h-5 w-5 group-hover:animate-bounce" />
-              <span className="group-hover:animate-fade-in">View Projects</span>
+              <Briefcase className="mr-3 h-5 w-5" />
+              View Projects
             </Button>
             <Button 
-              variant="outline" 
               size="lg"
               onClick={() => {
-                const link = document.createElement('a');
-                link.href = '/resume.pdf';
-                link.download = 'Lenka_Karthikeya_Resume.pdf';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
+                window.open('https://drive.google.com/file/d/1sqwwhPYIU3j6K3kZZ8ppN1xtVcNdOaEb/view?usp=drive_link', '_blank');
               }}
-              className="border-white/40 text-white bg-white/5 hover:bg-white/20 hover:text-white backdrop-blur-sm px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 group"
+              className="bg-gradient-primary text-white border-0 backdrop-blur-sm px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-glow hover:bg-gradient-to-r hover:from-primary hover:to-accent"
             >
-              <Download className="mr-3 h-5 w-5 group-hover:animate-bounce" />
-              <span className="group-hover:animate-fade-in">Download Resume</span>
+              <Download className="mr-3 h-5 w-5" />
+              Download Resume
             </Button>
           </div>
         </div>
