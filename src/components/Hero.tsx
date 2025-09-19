@@ -16,22 +16,12 @@ const Hero = ({ scrollToSection }: HeroProps) => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-accent/15 to-secondary/20 bg-[length:400%_400%] animate-gradient-shift"></div>
+      {/* Animated Background - Professional Black Theme */}
+      <div className="absolute inset-0 hero-bg-black animate-gradient-shift"></div>
+      {/* Background Image Overlay */}
+      <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center opacity-25"></div>
       
-      {/* Mesh Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <defs>
-            <pattern id="mesh" width="20" height="20" patternUnits="userSpaceOnUse">
-              <path d="M 20,0 L 0,20 M 0,0 L 20,20" stroke="currentColor" strokeWidth="0.5" fill="none"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#mesh)" className="text-white/20"/>
-        </svg>
-      </div>
-      
-      {/* Geometric Patterns */}
+      {/* Geometric Accents */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full animate-float"></div>
         <div className="absolute top-40 right-32 w-24 h-24 bg-white/5 rounded-lg rotate-45 animate-float" style={{ animationDelay: '1s' }}></div>

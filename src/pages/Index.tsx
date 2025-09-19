@@ -119,12 +119,7 @@ const Index = () => {
       <About />
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-muted/20 via-background to-muted/30 relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 left-10 w-40 h-40 bg-primary/30 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-20 right-20 w-60 h-60 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-        </div>
+      <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-experience-pro relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Professional Experience</h2>
@@ -166,7 +161,7 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-card">
+      <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-projects-pro">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Featured Projects</h2>
@@ -208,13 +203,7 @@ const Index = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background via-muted/20 to-background relative overflow-hidden">
-        {/* Background Geometric Shapes */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-primary/40 rounded-lg rotate-45 animate-float"></div>
-          <div className="absolute bottom-32 right-32 w-24 h-24 bg-accent/30 rounded-full animate-float" style={{ animationDelay: '1.5s' }}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-radial from-primary/5 to-transparent rounded-full"></div>
-        </div>
+      <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-skills-pro relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Technical Expertise</h2>
@@ -272,11 +261,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-card relative overflow-hidden">
-        {/* Background Animation */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/10 via-transparent to-accent/10 animate-gradient-shift bg-[length:400%_400%]"></div>
-        </div>
+      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-contact-pro relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Let's Connect</h2>
